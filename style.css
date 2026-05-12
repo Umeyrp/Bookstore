@@ -1,0 +1,129 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin: 0 10px;
+    background-color: #c38d95;
+    border: 2px solid #fffdeb;
+    box-shadow: 2px 9px 16px #fffdeb;
+    border-bottom-right-radius: 54px;
+    border-bottom-left-radius: 54px;
+    border-top: 0;
+    background-image: linear-gradient(45deg, #ffc9c9, transparent);
+}
+
+header img {
+    height: 80px;
+    padding: 20px;
+}
+
+header h1 {
+    padding: 20px;
+    font-family: 'Georgia';
+    color: #ffeeee;
+}
+
+body {
+    background-color: #d9cdd5;
+    font-family: 'DM Sans';
+}
+
+.books_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 83px;
+    margin: 50px;
+}
+
+.book_card h2 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.book_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    width: 45%;
+    height: 580px;
+    background-color: #c09299;
+    border-radius: 16px;
+    box-shadow: 2px 9px 16px #fffdeb;
+    color: white;
+}
+
+.price_likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+
+}
+
+.price_likes p:first-child {
+    font-size: 2rem;
+}
+
+.price_likes p:last-child {
+    font-size: 1rem;
+}
+
+.price_likes img {
+    height: 18px;
+}
+
+.likes_wrapper p {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 31px;
+}
+
+.information_row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.information_row p:first-child {
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.information_row p:last-child {
+    width: 55%;
+    text-align: left;
+}
+
+.comments {
+    padding: 0 30px;
+}
+
+.img_wrapper img {
+    width: 40%;
+}
+
+.book_card p {
+    letter-spacing: -1px;
+}
+
+.img_wrapper {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(1deg, #d2aeae, #c09299);
+}
+
+.img {
+    width: 40px;
+    height: 40px;
+}
