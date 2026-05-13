@@ -212,7 +212,7 @@ function getBooksTemplate(index) {
                         <p>${books[index].genre}</p>
                     </div>
                 </div>
-                <div class="comments">
+                <div class="comments scrollable-content">
                     <p>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?

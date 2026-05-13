@@ -31,6 +31,13 @@
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+header,
+main,
+footer {
+    /*Content Limit*/
+    padding: 0rem max(calc(50% - 720px), 0rem);
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
