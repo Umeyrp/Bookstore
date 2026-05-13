@@ -193,7 +193,10 @@ function getBooksTemplate(index) {
                     <img src="./assets/img/book_img.png" alt="">
                 </div>
                 <div class="price_likes">
-                    <p>${books[index].price}€</p>
+                    <p>${
+new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(
+        books[index].price,
+    )}</p>
                     <div class="likes_wrapper">
                         <p>${books[index].likes} <img src="./assets/icons/heart_${books[index].liked == true ? 'full' : 'empty'}.png" alt=""></p>
                     </div>
@@ -222,7 +225,7 @@ function getBooksTemplate(index) {
                 </div>
                 <div class="send_comment_wrapper">
                     <input type="text" name="comment" placeholder="Write a comment..." class="input_comment">
-                    <button>></button>
+                    <button><img src="./assets/icons/send.png"></button>
                 </div>
             </article>`;
 }
