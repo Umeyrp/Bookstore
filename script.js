@@ -174,3 +174,55 @@ let books = [
     }
 ];
 
+function init() {
+    renderBooks();
+}
+
+function renderBooks() {
+    let books_contentRef = document.getElementById("books_content");
+    books_contentRef.value = "";
+    for (let i = 0; i < books.length; i++) {
+        books_contentRef.innerHTML += getBooksTemplate(i);
+    }
+}
+
+function getBooksTemplate(index) {
+    return `<article class="book_card">
+                <h2>${books[index].name}</h2>
+                <div class="img_wrapper">
+                    <img src="./assets/img/book_img.png" alt="">
+                </div>
+                <div class="price_likes">
+                    <p>${books[index].price}€</p>
+                    <div class="likes_wrapper">
+                        <p>${books[index].likes} <img src="./assets/icons/heart_${books[index].liked == true ? 'full' : 'empty'}.png" alt=""></p>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="information_row">
+                        <p>Author:</p>
+                        <p>${books[index].author}</p>
+                    </div>
+                    <div class="information_row">
+                        <p>Erscheinungsjahr:</p>
+                        <p>${books[index].publishedYear}</p>
+                    </div>
+                    <div class="information_row">
+                        <p>Genre:</p>
+                        <p>${books[index].genre}</p>
+                    </div>
+                </div>
+                <div class="comments">
+                    <p>    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia porro dicta esse! Deleniti qui doloremque dolor. Hic quam voluptatibus recusandae maxime, fugit laborum animi ducimus, alias ea dolore aut?
+                    </p>
+                </div>
+                <div class="send_comment_wrapper">
+                    <input type="text" name="comment" placeholder="Write a comment..." class="input_comment">
+                    <button>></button>
+                </div>
+            </article>`;
+}

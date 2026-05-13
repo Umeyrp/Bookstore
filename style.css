@@ -5,17 +5,12 @@ header {
     height: 60px;
     margin: 0 10px;
     background-color: #c38d95;
+    background-image: linear-gradient(45deg, #ffc9c9, transparent);
     border: 2px solid #fffdeb;
     box-shadow: 2px 9px 16px #fffdeb;
     border-bottom-right-radius: 54px;
     border-bottom-left-radius: 54px;
     border-top: 0;
-    background-image: linear-gradient(45deg, #ffc9c9, transparent);
-}
-
-header img {
-    height: 80px;
-    padding: 20px;
 }
 
 header h1 {
@@ -42,11 +37,17 @@ body {
     text-align: center;
 }
 
+.book_card>div {
+    margin-top: 30px;
+}
+
+.book_card>div:last-child {
+    margin-top: 10px;
+}
+
 .book_card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 30px;
     width: 45%;
     height: 580px;
     background-color: #c09299;
@@ -57,8 +58,8 @@ body {
 
 .price_likes {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 0 30px;
 
 }
@@ -77,15 +78,15 @@ body {
 
 .likes_wrapper p {
     display: flex;
-    gap: 8px;
     align-items: center;
+    gap: 8px;
 }
 
 .information {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 31px;
+    padding: 0 30px;
 }
 
 .information_row {
@@ -106,7 +107,10 @@ body {
 }
 
 .comments {
+    flex-grow: 1;
     padding: 0 30px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
 .img_wrapper img {
@@ -127,3 +131,28 @@ body {
     width: 40px;
     height: 40px;
 }
+
+.send_comment_wrapper {
+    display: flex;
+        padding: 10px 30px;
+}
+
+.send_comment_wrapper input {
+    flex-grow: 1;
+    border-bottom-left-radius: 7px;
+    border: none;
+    height: 50px;
+}
+
+.send_comment_wrapper button {
+    border: none;
+    width: 15%;
+    cursor: pointer;
+}
+
+.send_comment_wrapper input:focus{
+ border: none;
+ outline: none;
+}
+
+
