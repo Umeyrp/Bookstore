@@ -5,6 +5,10 @@ header {
     height: 60px;
     margin: 0 10px;
     background-color: #3b2a32;
+    background-image: url(./assets/img/paper.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     box-shadow: 2px 9px 16px #636363;
     border-bottom-right-radius: 54px;
     border-bottom-left-radius: 54px;
@@ -20,10 +24,6 @@ header h1 {
 body {
     background-color: #231820;
     font-family: 'DM Sans';
-}
-
-main {
-    margin-top: 30px;
 }
 
 .books_wrapper {
@@ -45,7 +45,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 16px;
-    box-shadow: 2px 9px 16px #fffdeb;
+    box-shadow: 0px 5px 16px #fffdeb;
     color: white;
 }
 
@@ -57,6 +57,7 @@ main {
     height: 30px;
     margin: 10px;
     margin-top: 40px;
+    margin-bottom: 17px;
     padding: 0 10px;
     text-align: center;
 }
@@ -70,7 +71,7 @@ main {
     flex-direction: column;
     flex-grow: 1;
     gap: 20px;
-    padding: 0 50px;
+    padding: 20px 50px;
     overflow: hidden;
 }
 
@@ -177,7 +178,7 @@ main {
 }
 
 .img_wrapper img {
-    height: 100%;
+    height: 80%;
 }
 
 .img_wrapper {
@@ -225,21 +226,17 @@ main {
 
 @media screen and (max-width: 992px) {
     html {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .books_wrapper {
         align-items: center;
-        gap: 20px;
-        margin: 50px 0;
+        gap: 45px;
+        margin: 50px 30px;
     }
 
     .information_row p:last-child {
         text-align: right;
-    }
-
-    .book_card {
-        width: 45%;
     }
 
     .book_informations {
@@ -247,7 +244,13 @@ main {
     }
 
     .likes_wrapper {
-        width: 80px;
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .book_card {
+        width: 80vw;
     }
 }
 
