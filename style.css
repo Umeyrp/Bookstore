@@ -187,11 +187,6 @@ body {
     height: 20%;
 }
 
-.img {
-    width: 40px;
-    height: 40px;
-}
-
 .send_comment_wrapper {
     display: flex;
     padding-bottom: 38px;
