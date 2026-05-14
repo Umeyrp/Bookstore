@@ -16,12 +16,14 @@ function renderBooks() {
 function sendComment(index) {
     let inputRef = document.getElementById("input_text_" + index);
     let inputValue = inputRef.value.trim();
+    let commentsRef = document.getElementById("comments_"+index);
     let username = "Muhammed";
     if (inputValue !== "") {
         books[index].comments.push({ "name": username, "comment": inputValue });
         inputRef.value = "";
         renderComments(index);
         saveInLocalStorage();
+        commentsRef.scrollTop = commentsRef.scrollHeight;
     }
 }
 
