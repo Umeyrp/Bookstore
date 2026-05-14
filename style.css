@@ -4,10 +4,10 @@ header {
     align-items: center;
     height: 60px;
     margin: 0 10px;
-    background-color: #c38d95;
-    background-image: linear-gradient(45deg, #ffc9c9, transparent);
-    border: 2px solid #fffdeb;
-    box-shadow: 2px 9px 16px #fffdeb;
+    background-color: #3b2a32;
+    /* background-image: linear-gradient(45deg, #ffc9c9, transparent); */
+    /* border: 2px solid #fffdeb; */
+    box-shadow: 2px 9px 16px #636363;
     border-bottom-right-radius: 54px;
     border-bottom-left-radius: 54px;
     border-top: 0;
@@ -16,7 +16,7 @@ header {
 header h1 {
     padding: 20px;
     font-family: 'Georgia';
-    color: #ffeeee;
+    color: white;
 }
 
 body {
@@ -36,37 +36,50 @@ main {
     margin: 50px;
 }
 
-.book_card h2 {
-    height: 30px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.book_card>div {
-    margin-top: 30px;
-}
-
-.book_card>div:last-child {
-    margin-top: 10px;
-}
-
 .book_card {
     display: flex;
     flex-direction: column;
     width: 45%;
     height: 620px;
     background-color: #c09299;
+    background-image: url(./assets/img/paper.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 16px;
     box-shadow: 2px 9px 16px #fffdeb;
     color: white;
+}
+
+.book_card p {
+    letter-spacing: -1px;
+}
+
+.book_card h2 {
+    height: 30px;
+    margin: 10px;
+    margin-top: 40px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.book_card>div:last-child {
+    margin-top: 10px;
+}
+
+.book_informations {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 20px;
+    padding: 0 50px;
+    overflow: hidden;
 }
 
 .price_likes {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-
 }
 
 .price_likes p:first-child {
@@ -79,8 +92,21 @@ main {
 
 .price_likes img {
     height: 18px;
-    cursor: pointer;
     color: white;
+    cursor: pointer;
+}
+
+.likes_wrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 105px;
+    height: 30px;
+    padding: 5px;
+    padding-left: 31px;
+    border-radius: 22px;
+    box-shadow: inset -20px 1px 20px 0px hwb(93deg 100% 0% / 58%);
+    backdrop-filter: blur(1px);
 }
 
 .likes_wrapper p {
@@ -89,11 +115,14 @@ main {
     gap: 8px;
 }
 
+.likes_wrapper p span {
+    font-size: 1.2rem;
+}
+
 .information {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 30px;
 }
 
 .information_row {
@@ -115,13 +144,14 @@ main {
 
 .comments {
     flex-grow: 1;
-    padding: 0 30px;
     padding-right: 10px;
 }
 
+.comments p {
+    padding-bottom: 8px;
+}
 
 .scrollable-content {
-    margin-right: 30px;
     overflow-y: scroll;
     scrollbar-gutter: stable both-edges;
 }
@@ -152,15 +182,10 @@ main {
     height: 100%;
 }
 
-.book_card p {
-    letter-spacing: -1px;
-}
-
 .img_wrapper {
     display: flex;
     justify-content: center;
     height: 20%;
-    background: linear-gradient(1deg, #d2aeae, #c09299);
 }
 
 .img {
@@ -170,15 +195,15 @@ main {
 
 .send_comment_wrapper {
     display: flex;
-    padding: 10px 30px;
+    padding-bottom: 38px;
 }
 
 .send_comment_wrapper input {
     flex-grow: 1;
-    width: 100%;
+    width: 80%;
     height: 35px;
+    padding: 20px;
     border: none;
-    box-shadow: -4px 3px 1px 0px #d2aeae;
     border-bottom-left-radius: 7px;
 }
 
@@ -186,10 +211,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    width: 20%;
     border: none;
-    cursor: pointer;
-    box-shadow: 4px -4px 0px 0px #d2aeae
+    cursor: pointer
 }
 
 .send_comment_wrapper button img {
@@ -202,21 +226,51 @@ main {
 }
 
 @media screen and (max-width: 992px) {
+    html {
+        font-size: 0.7rem;
+    }
+
+    .books_wrapper {
+        align-items: center;
+        gap: 20px;
+        margin: 50px 0;
+    }
+
     .information_row p:last-child {
         text-align: right;
     }
 
-    .books_wrapper {
-        gap: 20px;
-        margin: 0;
+    .book_card {
+        width: 45%;
+    }
+
+    .book_informations {
+        padding: 30px;
+    }
+
+    .likes_wrapper {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    html {
+        font-size: 0.7rem;
     }
 
     .books_wrapper {
-        flex-direction: column;
-        align-items: center;
+        padding: 0 18px;
     }
 
     .book_card {
-        width: 80%;
+        width: 80vw;
+    }
+
+    .book_informations {
+        padding: 30px;
+    }
+
+    .likes_wrapper {
+        width: 80px;
     }
 }
