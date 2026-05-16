@@ -6,6 +6,7 @@ let books = [
         "likes": 1250,
         "liked": true,
         "price": 19.99,
+        "img": "./assets/img/book.png",
         "publishedYear": 2018,
         "genre": "Fantasy",
         "comments": [
@@ -37,6 +38,7 @@ let books = [
         "likes": 980,
         "liked": false,
         "price": 14.50,
+        "img": "./assets/img/book.png",
         "publishedYear": 2021,
         "genre": "Fantasy",
         "comments": []
@@ -47,6 +49,7 @@ let books = [
         "likes": 1520,
         "liked": true,
         "price": 22.95,
+        "img": "./assets/img/book.png",
         "publishedYear": 2019,
         "genre": "Romantik",
         "comments": [
@@ -78,6 +81,7 @@ let books = [
         "likes": 750,
         "liked": false,
         "price": 18.00,
+        "img": "./assets/img/book.png",
         "publishedYear": 2020,
         "genre": "Science-Fiction",
         "comments": [
@@ -97,6 +101,7 @@ let books = [
         "likes": 1300,
         "liked": true,
         "price": 16.75,
+        "img": "./assets/img/book.png",
         "publishedYear": 2017,
         "genre": "Fantasy",
         "comments": []
@@ -107,6 +112,7 @@ let books = [
         "likes": 890,
         "liked": false,
         "price": 12.30,
+        "img": "./assets/img/book.png",
         "publishedYear": 2022,
         "genre": "Science-Fiction",
         "comments": [
@@ -126,6 +132,7 @@ let books = [
         "likes": 1450,
         "liked": true,
         "price": 21.00,
+        "img": "./assets/img/book.png",
         "publishedYear": 2015,
         "genre": "Science-Fiction",
         "comments": [
@@ -141,6 +148,7 @@ let books = [
         "likes": 920,
         "liked": false,
         "price": 17.50,
+        "img": "./assets/img/book.png",
         "publishedYear": 2020,
         "genre": "Fantasy",
         "comments": [
@@ -156,6 +164,7 @@ let books = [
         "likes": 1800,
         "liked": true,
         "price": 19.99,
+        "img": "./assets/img/book.png",
         "publishedYear": 2016,
         "genre": "Romantik",
         "comments": [
