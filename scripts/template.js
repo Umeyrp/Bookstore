@@ -5,7 +5,7 @@ function getBooksTemplate(index) {
     return `<article class="book_card">
                 <h2>${books[index].name}</h2>
                 <div class="img_wrapper">
-                    <img src="./assets/img/book.png" alt="">
+                    <img src="${books[index].img}" alt="">
                 </div>
                 <div class="book_informations">
                     <div class="price_likes">
