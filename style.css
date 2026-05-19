@@ -148,6 +148,7 @@ body {
 .comments {
     flex-grow: 1;
     padding-right: 10px;
+    height: 125px;
 }
 
 .comments p {
