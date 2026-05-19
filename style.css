@@ -104,7 +104,7 @@ body {
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 105px;
+    width: 94px;
     height: 30px;
     padding: 5px;
     padding-left: 31px;
@@ -137,7 +137,6 @@ body {
 
 .information_row p:first-child {
     width: 45%;
-    font-weight: bold;
     text-align: left;
 }
 
@@ -153,6 +152,12 @@ body {
 
 .comments p {
     padding-bottom: 8px;
+}
+
+.comments>p>span {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: underline;
 }
 
 .scrollable-content {
@@ -183,6 +188,7 @@ body {
 }
 
 .img_wrapper img {
+    padding-top: 20px;
     height: 80%;
 }
 
@@ -194,7 +200,7 @@ body {
 
 .send_comment_wrapper {
     display: flex;
-    padding-bottom: 38px;
+    padding-bottom: 22px;
 }
 
 .send_comment_wrapper input {
@@ -224,6 +230,12 @@ body {
     outline: none;
 }
 
+.comments:has(.no_comments){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 992px) {
     html {
         font-size: 0.8rem;
@@ -246,6 +258,10 @@ body {
     .likes_wrapper {
         width: 70px;
     }
+
+    .send_comment_wrapper{
+        padding-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -255,14 +271,6 @@ body {
 }
 
 @media screen and (max-width: 520px) {
-    html {
-        font-size: 0.7rem;
-    }
-
-    .books_wrapper {
-        padding: 0 18px;
-    }
-
     .book_card {
         width: 80vw;
     }
@@ -272,6 +280,10 @@ body {
     }
 
     .likes_wrapper {
-        width: 80px;
+        width: 67px;
+    }
+
+    .send_comment_wrapper input{
+        padding: 17px;
     }
 }

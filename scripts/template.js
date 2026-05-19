@@ -44,9 +44,9 @@ function getCommentsTemplateById(index) {
     if (books[index].comments.length > 0) {
         let comments = "";
         for (let i = 0; i < books[index].comments.length; i++) {
-            comments += `<p><strong>${books[index].comments[i].name}</strong>: ${books[index].comments[i].comment}</p>`;
+            comments += `<p><span>${books[index].comments[i].name}</span>: ${books[index].comments[i].comment}</p>`;
         }
         return comments;
     }
-    return `<p>No comments yet</p>`;
+    return `<p class="no_comments">No comments yet</p>`;
 }
