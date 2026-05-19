@@ -161,7 +161,7 @@ body {
 }
 
 .scrollable-content {
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-gutter: stable both-edges;
 }
 
@@ -251,16 +251,12 @@ body {
         text-align: right;
     }
 
-    .book_informations {
-        padding: 30px;
-    }
-
     .likes_wrapper {
         width: 70px;
     }
 
     .send_comment_wrapper{
-        padding-bottom: 10px;
+        padding-bottom: 17px;
     }
 }
 
