@@ -169,7 +169,7 @@ body {
 .scrollable-content:hover,
 .scrollable-content:active,
 .scrollable-content:focus {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .scrollable-content::-webkit-scrollbar {
