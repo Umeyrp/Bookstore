@@ -119,10 +119,6 @@ body {
     gap: 8px;
 }
 
-.likes_wrapper p span {
-    font-size: 1.2rem;
-}
-
 .information {
     display: flex;
     flex-direction: column;
@@ -147,8 +143,8 @@ body {
 
 .comments {
     flex-grow: 1;
-    padding-right: 10px;
     height: 125px;
+    padding-right: 10px;
 }
 
 .comments p {
@@ -157,13 +153,26 @@ body {
 
 .comments>p>span {
     font-weight: bold;
-    letter-spacing: 1px;
     text-decoration: underline;
+    letter-spacing: 1px;
+}
+
+.delete_comment_button {
+    position: relative;
+    top: 3px;
+    height: 20px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.delete_comment_button img {
+    height: 20px;
 }
 
 .scrollable-content {
     overflow-y: auto;
-    scrollbar-gutter: stable both-edges;
 }
 
 .scrollable-content:hover,
@@ -189,8 +198,8 @@ body {
 }
 
 .img_wrapper img {
-    padding-top: 20px;
     height: 80%;
+    padding-top: 20px;
 }
 
 .img_wrapper {
@@ -200,6 +209,7 @@ body {
 }
 
 .send_comment_wrapper {
+    position: relative;
     display: flex;
     padding-bottom: 22px;
 }
@@ -231,17 +241,43 @@ body {
     outline: none;
 }
 
-.comments:has(.no_comments){
+.comments:has(.no_comments) {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media screen and (max-width: 992px) {
-    html {
-        font-size: 0.8rem;
-    }
+.empty_comment {
+    position: absolute;
+    bottom: -10px;
+    display: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    color: #FF4545;
+}
 
+.impressum {
+    padding: 50px;
+    color: white;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./assets/img/paper.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer a {
+    padding: 20px;
+}
+
+@media screen and (max-width: 992px) {
     .books_wrapper {
         align-items: center;
         gap: 45px;
@@ -256,8 +292,8 @@ body {
         width: 70px;
     }
 
-    .send_comment_wrapper{
-        padding-bottom: 17px;
+    .book_informations {
+        padding: 20px 40px;
     }
 }
 
@@ -273,14 +309,29 @@ body {
     }
 
     .book_informations {
-        padding: 30px;
+        padding: 20px 30px;
+        padding-top: 10px;
     }
 
     .likes_wrapper {
         width: 67px;
     }
 
-    .send_comment_wrapper input{
+    .send_comment_wrapper input {
         padding: 17px;
+    }
+
+    .price_likes p:first-child {
+        font-size: 1.7rem;
+    }
+
+    .price_likes p:last-child {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 357px) {
+    .send_comment_wrapper {
+        padding-bottom: 43px;
     }
 }
