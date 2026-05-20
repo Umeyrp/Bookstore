@@ -44,5 +44,5 @@ function getCommentsEmptyTemplate() {
 }
 
 function getCommentsTemplate(index, i) {
-    return `<p><button class="delete_comment_button" onclick="deleteComment(${index},${i})"><img src="../assets/icons/bin.png"></button> <span>${books[index].comments[i].name}</span>: ${books[index].comments[i].comment}</p>`;
+    return `<p><button class="delete_comment_button" onclick="deleteComment(${index},${i})"><img src="./assets/icons/bin.png"></button> <span>${books[index].comments[i].name}</span>: ${books[index].comments[i].comment}</p>`;
 }
