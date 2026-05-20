@@ -14,28 +14,32 @@ function renderBooks() {
 }
 
 function sendComment(index) {
-    let inputRef = document.getElementById("input_text_" + index);
-    let inputValue = inputRef.value.trim();
-    let commentsRef = document.getElementById("comments_" + index);
-    let username = "Muhammed";
-    if (validateComment(index, inputRef, inputValue)) {
-        books[index].comments.push({ "name": username, "comment": inputValue });
-        renderComments(index, inputRef);
-        saveInLocalStorage();
-        commentsRef.scrollTop = commentsRef.scrollHeight;
-    }
+    const inputRef = document.getElementById("input_text_" + index);
+    const inputValue = inputRef.value.trim();
+    const username = "Muhammed";
+    if (!validateComment(index, inputValue)) { return };
+    inputRef.value = "";
+    books[index].comments.push({ "name": username, "comment": inputValue });
+    renderComments(index, inputRef);
+    saveInLocalStorage();
+    scrollCommentsToBottom(index);
 }
 
-function validateComment(index, inputRef, inputValue) {
-    let emptyCommentWarning = document.getElementById("empty_comment_" + index);
-    if (inputValue !== "" && inputValue.length > 2) {
-        inputRef.value = "";
-        hideAllEmptyCommentWarning();
-        return true;
-    } else {
-        hideAllEmptyCommentWarning();
+function scrollCommentsToBottom(index) {
+    const commentsRef = document.getElementById("comments_" + index);
+    commentsRef.scrollTop = commentsRef.scrollHeight;
+}
+
+function validateComment(index, inputValue) {
+    const emptyCommentWarning = document.getElementById("empty_comment_" + index);
+    hideAllEmptyCommentWarning();
+    const isValid = inputValue.length > 2;
+
+    if (!isValid) {
         emptyCommentWarning.style.display = "block";
     }
+
+    return isValid;
 }
 
 function hideAllEmptyCommentWarning() {
@@ -46,7 +50,7 @@ function hideAllEmptyCommentWarning() {
 
 function renderComments(index) {
     let comments = getComments(index);
-    let commentsRef = document.getElementById("comments_" + index)
+    const commentsRef = document.getElementById("comments_" + index)
     commentsRef.innerHTML = comments;
 }
 
@@ -68,8 +72,8 @@ function deleteComment(book_index, comment_index) {
 }
 
 function renderLikes(index) {
-    let likesRef = document.getElementById("book_likes_number_" + index);
-    let likesImgRef = document.getElementById("books_likes_img_" + index);
+    const likesRef = document.getElementById("book_likes_number_" + index);
+    const likesImgRef = document.getElementById("books_likes_img_" + index);
 
     likesRef.textContent = books[index].likes;
     likesImgRef.setAttribute("src", `./assets/icons/heart_${books[index].liked == true ? "full" : "empty"}.png`)
@@ -88,7 +92,7 @@ function likeBook(index) {
 }
 
 function getFromLocalStorage() {
-    let booksLocal = JSON.parse(localStorage.getItem("books"));
+    const booksLocal = JSON.parse(localStorage.getItem("books"));
     if (booksLocal) {
         books = booksLocal;
     }
