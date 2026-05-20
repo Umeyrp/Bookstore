@@ -22,6 +22,9 @@ header h1 {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
     background-color: #231820;
     font-family: 'DM Sans';
 }
@@ -263,6 +266,10 @@ body {
     color: white;
 }
 
+main {
+    flex: 1;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -275,6 +282,7 @@ footer {
 
 footer a {
     padding: 20px;
+    color: white;
 }
 
 @media screen and (max-width: 992px) {
