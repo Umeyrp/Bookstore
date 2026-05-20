@@ -1,7 +1,4 @@
 function getBooksTemplate(index) {
-    const formattedPrice = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(books[index].price);
-    const heartIcon = books[index].liked ? "full" : "empty";
-
     return `<article class="book_card">
                 <h2>${books[index].name}</h2>
                 <div class="img_wrapper">
@@ -9,9 +6,9 @@ function getBooksTemplate(index) {
                 </div>
                 <div class="book_informations">
                     <div class="price_likes">
-                        <p>${formattedPrice}</p>
+                        <p>${new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(books[index].price)}</p>
                         <div class="likes_wrapper">
-                            <p><span id="book_likes_number_${index}">${books[index].likes}</span> <img onclick="likeBook(${index})" id="books_likes_img_${index}" src="./assets/icons/heart_${heartIcon}.png" alt=""></p>
+                            <p><span id="book_likes_number_${index}">${books[index].likes}</span> <img onclick="likeBook(${index})" id="books_likes_img_${index}" src="./assets/icons/heart_${books[index].liked ? "full" : "empty"}.png" alt=""></p>
                         </div>
                     </div>
                     <div class="information">
@@ -30,23 +27,22 @@ function getBooksTemplate(index) {
                     </div>
                     <hr>
                     <div class="comments scrollable-content" id="comments_${index}">
-                        ${getCommentsTemplateById(index)}
+                        ${getComments(index)}
                     </div>
                     <div class="send_comment_wrapper">
                         <input type="text" id="input_text_${index}" name="comment" placeholder="Write a comment..." class="input_comment">
                         <button onclick="sendComment(${index})"><img src="./assets/icons/send.png"></button>
-                    </div> 
+                        <p class="empty_comment" id="empty_comment_${index}">Bitte schreiben Sie min. 3 Zeichen</p>
+                        </div> 
+                    
                 </div>
             </article>`;
 }
 
-function getCommentsTemplateById(index) {
-    if (books[index].comments.length > 0) {
-        let comments = "";
-        for (let i = 0; i < books[index].comments.length; i++) {
-            comments += `<p><span>${books[index].comments[i].name}</span>: ${books[index].comments[i].comment}</p>`;
-        }
-        return comments;
-    }
+function getCommentsEmptyTemplate() {
     return `<p class="no_comments">No comments yet</p>`;
+}
+
+function getCommentsTemplate(index, i) {
+    return `<p><button class="delete_comment_button" onclick="deleteComment(${index},${i})"><img src="../assets/icons/bin.png"></button> <span>${books[index].comments[i].name}</span>: ${books[index].comments[i].comment}</p>`;
 }

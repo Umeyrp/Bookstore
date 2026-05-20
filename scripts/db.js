@@ -183,7 +183,3 @@ let books = [
         ]
     }
 ];
-
-if (localStorage.getItem("books")) {
-    let books = JSON.parse(localStorage.getItem("books"));
-}
