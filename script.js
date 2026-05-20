@@ -16,21 +16,55 @@ function renderBooks() {
 function sendComment(index) {
     let inputRef = document.getElementById("input_text_" + index);
     let inputValue = inputRef.value.trim();
-    let commentsRef = document.getElementById("comments_"+index);
+    let commentsRef = document.getElementById("comments_" + index);
     let username = "Muhammed";
-    if (inputValue !== "") {
+    if (validateComment(index, inputRef, inputValue)) {
         books[index].comments.push({ "name": username, "comment": inputValue });
-        inputRef.value = "";
-        renderComments(index);
+        renderComments(index, inputRef);
         saveInLocalStorage();
         commentsRef.scrollTop = commentsRef.scrollHeight;
     }
 }
 
+function validateComment(index, inputRef, inputValue) {
+    let emptyCommentWarning = document.getElementById("empty_comment_" + index);
+    if (inputValue !== "" && inputValue.length > 2) {
+        inputRef.value = "";
+        hideAllEmptyCommentWarning();
+        return true;
+    } else {
+        hideAllEmptyCommentWarning();
+        emptyCommentWarning.style.display = "block";
+    }
+}
+
+function hideAllEmptyCommentWarning() {
+    document.querySelectorAll('.empty_comment').forEach(el => {
+        el.style.display = 'none';
+    });
+}
+
 function renderComments(index) {
-    let comments = getCommentsTemplateById(index);
+    let comments = getComments(index);
     let commentsRef = document.getElementById("comments_" + index)
     commentsRef.innerHTML = comments;
+}
+
+function getComments(index) {
+    if (books[index].comments.length > 0) {
+        let comments = "";
+        for (let i = 0; i < books[index].comments.length; i++) {
+            comments += getCommentsTemplate(index, i);
+        }
+        return comments;
+    }
+    return getCommentsEmptyTemplate();
+}
+
+function deleteComment(book_index, comment_index) {
+    books[book_index].comments.splice(comment_index, 1);
+    saveInLocalStorage();
+    renderComments(book_index);
 }
 
 function renderLikes(index) {
