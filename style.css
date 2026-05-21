@@ -15,9 +15,11 @@ header {
     border-top: 0;
 }
 
-header h1 {
+header a {
     padding: 20px;
     font-family: 'Georgia';
+    font-size: 32px;
+    font-weight: bold;
     color: white;
 }
 
@@ -120,6 +122,15 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.likes_wrapper button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: center;
 }
 
 .information {
@@ -261,13 +272,13 @@ body {
     color: #FF4545;
 }
 
-.impressum {
-    padding: 50px;
-    color: white;
-}
-
 main {
     flex: 1;
+}
+
+.impressum {
+    margin: 50px;
+    color: white;
 }
 
 footer {
